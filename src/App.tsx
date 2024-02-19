@@ -1,37 +1,27 @@
 import {useState} from "react";
 
 function App() {
-  // const [drink, setDrink] = useState({
-  //   title: "Americano",
-  //   price: 5,
-  // });
-  const [customer, setCustomer] = useState({
-    name: 'Abdullokh',
-    address: {
-      city: 'Kokand',
-      zipCode: 150500
-    }
-  })
+  const [tags, setTags] = useState(['happy', 'cheerful']);
 
-  // const handleClick = () => {
-  //   // const newDrink = {
-  //   //   ...drink,
-  //   //   price: 6,
-  //   // }
-  //
-  //   setDrink({ ...drink, price: 6 });
-  // };
+  const handleClick = () => {
+    // Add
+    setTags([ ...tags, 'exciting' ])
 
-  const setNestedObj = () => {
-    setCustomer({
-      ...customer,
-      address: { ...customer.address, zipCode: 150501 }
-    });
-  };
+    // Remove
+    setTags(tags.filter(tag => tag !== 'happy'))
+
+    // Update
+    // You can use setTags([ ...tags, 'exciting' ]) like Add or
+    setTags(tags.map(tag => tag === 'happy' ? 'happiness' : tag))
+  }
 
   return (
     <>
-      {customer.address.zipCode}<button onClick={setNestedObj}>click me</button>
+      <ul>
+        {tags.map((tag) =>
+          <li key={tag} onClick={handleClick}> {tag} </li>
+        )}
+      </ul>
     </>
   )
 }
