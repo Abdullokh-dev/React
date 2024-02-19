@@ -3,7 +3,7 @@ import ListGroup from "./components/ListGroup";
 function App() {
   return (
     <>
-      <ListGroup />
+      <ListGroup clickId={(item) => console.log(item)} />
     </>
   )
 }
