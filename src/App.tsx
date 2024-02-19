@@ -1,9 +1,11 @@
 import ListGroup from "./components/ListGroup";
 
 function App() {
+  const items = ['New York','San Fransisco', 'Tokyo', 'London', 'Paris'];
+
   return (
     <>
-      <ListGroup clickId={(item) => console.log(item)} />
+      <ListGroup items={items} heading={'List'} />
     </>
   )
 }
