@@ -3,8 +3,6 @@ import {useState} from "react";
 import ExpenseFilter from "./expense-tracker/components/ExpenseFilter";
 import ExpenseForm from "./expense-tracker/components/ExpenseForm";
 
-export const categories = ["Groceries", "Utilities", "Entertainment"];
-
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [expenses, setExpenses] = useState([
